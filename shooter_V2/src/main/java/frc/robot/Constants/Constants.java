@@ -11,7 +11,7 @@ public final class Constants {
      */
     public static final class Motors {
         public static final int RIGHT_FALCON = 6;
-        public static final int LEFT_FALCON = 51; 
+        public static final int LEFT_FALCON = 5; 
      
     }
 }
