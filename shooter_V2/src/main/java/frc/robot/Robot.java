@@ -1,13 +1,12 @@
 //2/3/22
 //4501 HUMANS
+//Fox Raggio
 
 package frc.robot;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
-
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Constants.Constants;
 
 public class Robot extends TimedRobot {
@@ -22,13 +21,22 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
-    if(this.Xbox.getAButtonPressed()) {
-      this.left0.set(SmartDashboard.getNumber("leftSpeed", 0.0));
-      this.right0.set(SmartDashboard.getNumber("rightSpeed", 0.0));
+    if(this.Xbox.getAButtonPressed()) { //uper port speeds
+      this.left0.set(-0.71);
+      this.right0.set(-0.63);
     }
     if(this.Xbox.getAButtonReleased()){ 
       this.left0.stopMotor();
       this.right0.stopMotor();
     }
+    if(this.Xbox.getBButtonPressed()) { //lower port speeds
+      this.left0.set(-0.2);
+      this.right0.set(-0.3);
+    }
+    if(this.Xbox.getBButtonReleased()) {
+      this.left0.stopMotor();
+      this.right0.stopMotor();
+    }
+
   }
 }
